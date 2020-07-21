@@ -84,6 +84,11 @@ view: users {
     sql: ${TABLE}."ZIP" ;;
   }
 
+  dimension: city_state {
+    type: string
+    sql: ${city} || ${state}."CITY_STATE" ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, first_name, last_name, events.count, order_items.count]
