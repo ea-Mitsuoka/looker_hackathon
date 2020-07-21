@@ -104,7 +104,7 @@ view: order_items {
 
   measure: order_count {
     type: count_distinct
-    sql: ${order_id}."OURDER_COUNT" ;;
+    sql: ${order_id} ;;
     label: "オーダー数"
     description: "ユニークなオーダー数"
   }
