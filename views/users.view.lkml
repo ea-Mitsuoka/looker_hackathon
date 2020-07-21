@@ -74,6 +74,11 @@ view: users {
     sql: ${TABLE}."STATE" ;;
   }
 
+  dimension: city_state {
+    type: string
+    sql: ${city} || ‘, ‘ || ${state}."CITY_STATE" ;;
+  }
+
   dimension: traffic_source {
     type: string
     sql: ${TABLE}."TRAFFIC_SOURCE" ;;
@@ -82,11 +87,6 @@ view: users {
   dimension: zip {
     type: zipcode
     sql: ${TABLE}."ZIP" ;;
-  }
-
-  dimension: city_state {
-    type: string
-    sql: ${city} || ${state}."CITY_STATE" ;;
   }
 
   measure: count {
