@@ -84,6 +84,11 @@ view: users {
     sql: ${TABLE}."TRAFFIC_SOURCE" ;;
   }
 
+  dimension: is_email_source {
+    type: yesno
+    sql: ${traffic_source} = ‘Email’."IS_EMAIL_SOURCE" ;;
+  }
+
   dimension: zip {
     type: zipcode
     sql: ${TABLE}."ZIP" ;;
