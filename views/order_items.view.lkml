@@ -103,19 +103,22 @@ view: order_items {
   }
 
   measure: order_count {
-    description: "A count of unique orders"
     type: count_distinct
     sql: ${order_id}."OURDER_COUNT" ;;
+    label: "オーダー数"
+    description: "ユニークなオーダー数"
   }
 
   measure: total_sales {
     type: sum
     sql: ${sale_price} ;;
+    label: "総売上"
   }
 
   measure: average_sales {
     type: average
     sql: ${sale_price} ;;
+    label: "平均売上"
   }
 
   # ----- Sets of fields for drilling ------
