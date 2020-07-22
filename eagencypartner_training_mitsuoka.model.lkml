@@ -24,4 +24,8 @@ explore: users {
     sql_on: ${users.id} = ${order_items.user_id} ;;
     relationship: one_to_many
   }
+  join: user_facts {
+    sql_on: ${users.id} = ${user_facts.user_id} ;;
+    relationship: one_to_many
+  }
 }
