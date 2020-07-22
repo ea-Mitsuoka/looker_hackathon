@@ -16,7 +16,7 @@ view: inventory_facts {
     drill_fields: [detail*]
   }
 
-  measure: sold_per_total_cost{
+  measure: total_cost_of_goods_sold {
     type: number
     sql: ${cost_of_goods_sold} / ${total_cost} ;;
   }
