@@ -27,21 +27,25 @@ view: case_demographics_ethnicity {
     sql: ${TABLE}.date ;;
   }
 
+  # 死亡率
   dimension: death_percentage {
     type: number
     sql: ${TABLE}.death_percentage ;;
   }
 
+  # 死亡者数
   dimension: deaths {
     type: number
     sql: ${TABLE}.deaths ;;
   }
 
+  # 人口比率
   dimension: percent_ca_population {
     type: number
     sql: ${TABLE}.percent_ca_population ;;
   }
 
+  # 人種民族
   dimension: race_ethnicity {
     type: string
     sql: ${TABLE}.race_ethnicity ;;

@@ -17,6 +17,7 @@ view: statewide_testing {
     sql: ${TABLE}.date ;;
   }
 
+  # 検査数
   dimension: tested {
     type: number
     sql: ${TABLE}.tested ;;

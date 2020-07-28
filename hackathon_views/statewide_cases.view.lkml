@@ -2,6 +2,7 @@ view: statewide_cases {
   sql_table_name: `ea-datatechlab.mitsuoka_looker_training.statewide_cases`
     ;;
 
+  # 郡・州
   dimension: county {
     type: string
     sql: ${TABLE}.county ;;
@@ -28,16 +29,19 @@ view: statewide_cases {
     sql: ${TABLE}.newcountconfirmed ;;
   }
 
+  # 新規死亡者数
   dimension: newcountdeaths {
     type: number
     sql: ${TABLE}.newcountdeaths ;;
   }
 
+  # 総感染者数
   dimension: totalcountconfirmed {
     type: number
     sql: ${TABLE}.totalcountconfirmed ;;
   }
 
+  # 総死亡者数
   dimension: totalcountdeaths {
     type: number
     sql: ${TABLE}.totalcountdeaths ;;

@@ -7,21 +7,25 @@ view: hospitals_by_county {
     sql: ${TABLE}.all_hospital_beds ;;
   }
 
+  # 郡
   dimension: county {
     type: string
     sql: ${TABLE}.county ;;
   }
 
+  # 病院別コロナ確定患者数
   dimension: hospitalized_covid_confirmed_patients {
     type: number
     sql: ${TABLE}.hospitalized_covid_confirmed_patients ;;
   }
 
+  # 病院別コロナ患者数 (TODO 確定とどう違う？)
   dimension: hospitalized_covid_patients {
     type: number
     sql: ${TABLE}.hospitalized_covid_patients ;;
   }
 
+  #
   dimension: hospitalized_suspected_covid_patients {
     type: number
     sql: ${TABLE}.hospitalized_suspected_covid_patients ;;
