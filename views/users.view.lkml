@@ -24,6 +24,11 @@ view: users {
   dimension: city {
     type: string
     sql: ${TABLE}."CITY" ;;
+    link: {
+      label: "Link To An Explore"
+      url: "/explore/eagencypartner_training_mitsuoka/users?fields=view.field_1,view.field_2,&f[view.filter_1]={{ value }}"
+      icon_url: "https://looker.com/favicon.ico" }
+
   }
 
   dimension: country {
@@ -47,8 +52,12 @@ view: users {
   }
 
   dimension: email {
+    required_access_grants: [is_pii_viewer]
     type: string
     sql: ${TABLE}."EMAIL" ;;
+    link: {
+      label: "Category Detail Dashboard"
+      url: "/dashboards/1813?Email={{value}}" }
   }
 
   dimension: first_name {
@@ -89,6 +98,11 @@ view: users {
   dimension: traffic_source {
     type: string
     sql: ${TABLE}."TRAFFIC_SOURCE" ;;
+    link: {
+      label: "Drill Down to See Customers"
+      url: "/explore/eagencypartner_training_mitsuoka/users?fields=users.id,users.first_name,users.last_name&f[use rs.traffic_source]={{ _filters['users.traffic_source'] | url_encode }}"
+      icon_url: "https://looker.com/favicon.ico"
+    }
   }
 
   dimension: is_email_source {
