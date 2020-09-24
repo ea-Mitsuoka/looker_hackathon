@@ -1,4 +1,4 @@
-include: "../eagencypartner_training_mitsuoka.model.lkml"
+include: "../partner_training_mitsuoka.model.lkml"
 
 view: order_facts {
   derived_table: {
@@ -7,7 +7,7 @@ view: order_facts {
       column: total_sales { field: order_items.total_sales }
       column: order_count { field: order_items.order_count }
       derived_column: order_rev_rank {
-        sql: rank() over(order by ${order_items.total_sales} ;;
+        sql: rank() over(order by ${order_items.total_sales}) ;;
       }
     }
   }
